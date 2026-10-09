@@ -591,11 +591,15 @@ function goBack() {
             }
 
             // Show target page
-            const targetPage = document.getElementById(`page-${pageNum}`);
-            if (targetPage) {
-                targetPage.classList.remove('hidden');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
+const targetPage = document.getElementById(`page-${pageNum}`);
+if (targetPage) {
+    targetPage.classList.remove('hidden');
+
+    // Update halaman aktif
+    currentPage = pageNum;
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
             // Trigger typing effect when entering Page 2
             if (pageNum === 2 && !isTypingStarted) {
