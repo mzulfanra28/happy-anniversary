@@ -528,6 +528,7 @@
 		
         const correctPasscode = "081025";
         let isTypingStarted = false;
+		let passcodeCorrect = false;
 
         const letterMessage = "I still can't believe it's already been a year since we started this journey together. You've completely changed my world in the best way possible, becoming the person I want to share every bit of good news with and the one who makes all the heavy moments feel light just by being there. Thank you for being my safe space, my biggest supporter, and my absolute favorite part of every single day. Here's to 365 days of falling for you, and a lifetime more to go.";
 
@@ -548,7 +549,8 @@
             const errorMsg = document.getElementById('error-msg');
 
             if (inputVal === correctPasscode) {
-                closePasscodeModal();
+                passcodeCorrect = true;
+				closePasscodeModal();
                 goToPage(2);
 				playBacksound();
             } else {
@@ -582,6 +584,12 @@ if (targetPage) {
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+	if (backsound && passcodeCorrect) {
+    if (pageNum === 5) {backsound.pause();
+    } else if (backsound.paused) {
+        backsound.play();
+        };
+    }
 
             // Trigger typing effect when entering Page 2
             if (pageNum === 2 && !isTypingStarted) {
