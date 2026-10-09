@@ -552,6 +552,7 @@
             if (inputVal === correctPasscode) {
                 closePasscodeModal();
                 goToPage(2);
+				playBacksound();
             } else {
                 errorMsg.classList.remove('hidden');
                 document.getElementById('passcode-input').classList.add('border-red-300');
@@ -561,6 +562,11 @@
             }
         }
 
+function playBacksound() {
+  const audio = document.getElementById("backsound");
+  audio.play();
+}
+	
         function goToPage(pageNum) {
             // Hide all pages
             for (let i = 1; i <= 5; i++) {
