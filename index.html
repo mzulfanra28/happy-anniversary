@@ -523,33 +523,7 @@
     <!-- JAVASCRIPT LOGIC                           -->
     <!-- ========================================== -->
 	<script>
-		// Variabel untuk melacak halaman yang sedang aktif (mulai dari halaman 1)
-let currentPage = 1;
-
-// Fungsi untuk pindah halaman secara dinamis
-function goToPage(pageNumber) {
-    // Sembunyikan halaman saat ini
-    const currentEl = document.getElementById(`page-${currentPage}`);
-    if (currentEl) {
-        currentEl.classList.add('hidden');
-    }
-    
-    // Tampilkan halaman tujuan
-    const targetEl = document.getElementById(`page-${pageNumber}`);
-    if (targetEl) {
-        targetEl.classList.remove('hidden');
-    }
-    
-    // Update nomor halaman aktif
-    currentPage = pageNumber;
-}
-
-// FUNGSI UTAMA UNTUK TOMBOL BACK
-function goBack() {
-    if (currentPage > 1) {
-        goToPage(currentPage - 1);
-    }
-}
+		
         const correctPasscode = "081025";
         let isTypingStarted = false;
 
@@ -612,7 +586,7 @@ if (targetPage) {
             const container = document.getElementById('typed-letter-text');
             container.innerHTML = "";
             let i = 0;
-            const speed = 28; // typing speed in milliseconds
+            const speed = 35; // typing speed in milliseconds
 
             function typeWriter() {
                 if (i < letterMessage.length) {
